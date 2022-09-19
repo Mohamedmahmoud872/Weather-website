@@ -6,7 +6,7 @@ const message = document.querySelector('#message');
 weather.addEventListener('submit', (e) => {
     e.preventDefault();
     const c = city.value;
-    const url =  'http://localhost:3000/weather?address=' + c ;
+    const url =  '/weather?address=' + c ; 
     message.textContent = 'Loading...';
     fetch(url).then((res) => {
         res.json().then((data) => {
