@@ -10,7 +10,9 @@ const forecast  = (lat, lon, callback) => {
         }else{
             const temp = body.main.temp;
             const description = body.weather[0].description;
-            callback(undefined, "it's currently " + Math.floor(temp) + " degree, with " + description + ", there's a " + body.clouds.all + " chance of rain.");
+            const rain = body.clouds.all;
+            const humidity = body.main.humidity;
+            callback(undefined, "it's currently " + Math.floor(temp) + " degree, with " + description + ", there's a " + rain + "% chance of rain and humidity percentage is " + humidity + "%");
         }
     })
 };
